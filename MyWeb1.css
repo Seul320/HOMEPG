@@ -1,0 +1,164 @@
+/*
+Reference: https://www.youtube.com/watch?v=LZ5M-e5z01c
+
+* 모든 태그들의 여백을 없앰, 테두리 만들기
+*/
+
+* {
+    padding: 0;
+    margin: 0;
+}
+
+body {
+  background-color: #333;
+  color: white;
+}
+.container{
+  max-width: 700px;
+  margin: 0 auto;
+  box-sizing: border-box;
+  height: 100vh;
+  display: flex;
+  flex-direction: column; /*flex 방향 세로*/
+  justify-content: space-between;
+  align-items: center;
+}
+
+/*
+* HEADER CSS / hover(가상클래스): ul>li 마우스 이벤트 
+*/
+
+header{
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  align-items: center;
+  padding: 1.2rem 0;
+}
+
+header>p {
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+header>ul{
+  display:flex;
+}
+
+header>ul>li { /*ul 메뉴 . 제거*/
+  list-style-type: none;
+  margin-left: 1.5rem;
+}
+
+header>ul>li>a { /*밑줄 제거*/
+  text-decoration: none;
+  font-size: 1.2rem;
+  font-weight:800;
+  padding-bottom: 5px;
+  color: gray;
+}
+
+header>ul>li:first-child>a {
+  color:white;
+  border-bottom: 5px solid white;
+}
+
+header>ul>li>a:hover{
+  border-bottom: 5px solid gray;
+}
+
+/*창 너비를 줄였을때 (600px이하) 실행*/
+@media screen and (max-width:600px){ 
+  header {
+    flex-direction: column;
+  }
+}
+
+/*
+* SECTION CSS
+*/
+
+section {
+  padding: 0 1rem;
+  text-align: center;
+}
+
+section>p {
+  margin-bottom: 2rem;
+}
+
+section>p:first-child {
+  font-size: 2rem;
+  font-weight: 900;
+}
+
+section>p:nth-of-type(2) {
+  font-size: 1.3rem;
+  font-weight: 500;
+}
+
+section>p:last-of-type {
+  font-size: 1.3rem;
+  font-weight: 500;
+}
+
+section>a {
+  display: block;
+  border: 1px solid black;
+  border-radius: 10px;
+  width: 150px;
+  font-size: 1.3rem;
+  font-weight: 600;
+  margin: auto;
+  padding: 0.8rem;
+  
+  cursor: pointer;
+  
+  
+  background-color: white;
+  color: black;
+}
+
+/*
+* Learn more 버튼 애니메이션(마우스)
+*/
+
+section>a span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+section>a span:after {
+  content: '\00bb';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s
+}
+
+section>a:hover span {
+  padding-right: 25px;S
+}
+
+section>a:hover span:after {
+  opacity: 1;
+  right: 0;
+}
+
+/*
+* FOOTER CSS
+*/
+
+footer {
+  margin-bottom: 2rem;
+  font-size:1.1rem;
+  color: gray;
+}
+
+footer>p>a {
+  text-decoration: none;
+  color: white;
+}
+
